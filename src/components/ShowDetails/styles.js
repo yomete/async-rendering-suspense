@@ -10,3 +10,15 @@ export const Container = styled.div`
   flex-wrap: wrap;
   padding: 0 2px;
 `;
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  p {
+    font-style: italic;
+    color: red;
+  }
+`;
