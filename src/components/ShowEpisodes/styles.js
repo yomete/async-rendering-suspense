@@ -18,13 +18,14 @@ export const ShowWrapper = styled.div`
   box-sizing: border-box;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  height: 200px;
+  height: auto;
 
   display: flex;
+  flex-direction: column;
 `;
 
 export const ImageWrapper = styled.div`
-  width: 40%;
+  width: 100%;
 
   img {
     object-fit: cover;
@@ -34,18 +35,6 @@ export const ImageWrapper = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  width: 60%;
   padding: 20px;
   text-align: left;
-`;
-
-export const Title = styled.p`
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 5px;
-  margin-top: 0;
-`;
-export const Subtitle = styled.p`
-  font-size: 14px;
-  margin-bottom: 5px;
 `;

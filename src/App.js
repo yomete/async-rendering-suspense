@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 
 import "./App.css";
-import Shows from "./components/Shows";
+import ShowDetails from "./components/ShowDetails";
+import ShowEpisodes from "./components/ShowEpisodes";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         <h1 className="App-title">React Suspense Demo</h1>
       </header>
       <Suspense fallback={<p>loading...</p>}>
-        <Shows />
+        <ShowDetails />
+        <ShowEpisodes />
       </Suspense>
     </div>
   );
