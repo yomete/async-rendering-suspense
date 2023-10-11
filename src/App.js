@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 
 import "./App.css";
-import Shows from "./components/Shows";
+
+const Shows = React.lazy(() => import("./components/Shows"));
 
 function App() {
   return (
