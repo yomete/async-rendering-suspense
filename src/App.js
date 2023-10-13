@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import "./App.css";
 import Shows from "./components/Shows";
@@ -9,9 +9,7 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">React Suspense Demo</h1>
       </header>
-      <Suspense fallback={<p>loading...</p>}>
-        <Shows />
-      </Suspense>
+      <Shows />
     </div>
   );
 }

@@ -1,19 +1,45 @@
-import { fetchShows } from "../fetchShows";
+import React, { useState, useEffect } from "react";
 import * as Styles from "./styles";
-
-const resource = fetchShows("heist");
 
 const formatScore = (number) => {
   return Math.round(number * 100);
 };
 
 const Shows = () => {
-  const shows = resource.read();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const result = await fetch(
+          "https://api.tvmaze.com/search/shows?q=heist"
+        );
+        const data = await result.json();
+        setData(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <Styles.Root>
       <Styles.Container>
-        {shows.map((show, index) => (
+        {data.map((show, index) => (
           <Styles.ShowWrapper key={index}>
             <Styles.ImageWrapper>
               <img
